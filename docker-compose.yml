@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  node:
+    build: .
+    container_name: "estate-chain-api-back-end"
+    ports:
+      - 7022:7022
+    volumes:
+      - accessLogs:/application/public/logs/accessLogs
+
+volumes:
+  accessLogs:
+    driver: local

@@ -1,0 +1,64 @@
+{
+  "/v1/land-token": {
+    "hash": "1437b00968b6e90e20b55036fd558d6e5051a997",
+    "schemas": {
+      "/v1/land-token/create": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "area": {
+            "type": "number"
+          },
+          "valuations": {
+            "type": "number"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "token": {
+            "type": "number"
+          },
+          "availability": {
+            "type": "number"
+          },
+          "guid": {
+            "type": "string"
+          },
+          "tokenId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "area",
+          "guid",
+          "location",
+          "purpose",
+          "title",
+          "token",
+          "tokenId",
+          "valuations"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      },
+      "/v1/land-token/sign": {
+        "type": "object",
+        "properties": {
+          "cid": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "cid"
+        ],
+        "$schema": "http://json-schema.org/draft-07/schema#"
+      }
+    }
+  }
+}

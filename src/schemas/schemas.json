@@ -1,0 +1,20 @@
+[
+	{
+		"source": "types/land-token.ts",
+		"basePath": "/v1/land-token",
+		"schemas": [
+			{
+				"apiPath": "/v1/land-token/create",
+				"method": "POST",
+				"source": "types/land-token.ts",
+				"schema": "LandTokenCreatePayload"
+			},
+			{
+				"apiPath": "/v1/land-token/sign",
+				"method": "PATCH",
+				"source": "types/land-token.ts",
+				"schema": "LandTokenSignPayload"
+			}
+		]
+	}
+]
