@@ -26,7 +26,7 @@ class LandTokenSignService {
 
         await client.set(
           `land_token_cid_arr`,
-          JSON.stringify([...new Set(cidArray)])
+          JSON.stringify([...new Set(cidArray)]),
         );
 
         cidArray = await client.get(`land_token_cid_arr`);

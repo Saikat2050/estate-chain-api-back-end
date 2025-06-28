@@ -8,7 +8,7 @@ class LandTokenDetailsService {
   public async fetchLandToken(cid: string) {
     try {
       const axiosHelper = new AxiosHelper(
-        process.env.LIGHTHOUSE_BASE_URL as string
+        process.env.LIGHTHOUSE_BASE_URL as string,
       );
 
       const data = await axiosHelper.request(`/ipfs/${cid}`);

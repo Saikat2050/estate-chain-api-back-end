@@ -1,7 +1,6 @@
-
 import {
-	LandTokenCreatePayload,
-	LandTokenUploadResponse
+  LandTokenCreatePayload,
+  LandTokenUploadResponse,
 } from "../types/land-token";
 
 import lighthouse from "@lighthouse-web3/sdk";
@@ -15,7 +14,9 @@ class LandTokenCreateService {
 
   public async createLandToken(inputData: LandTokenCreatePayload) {
     try {
-      inputData.availability = inputData.availability ? Number(inputData.availability) : 100
+      inputData.availability = inputData.availability
+        ? Number(inputData.availability)
+        : 100;
       const data: LandTokenUploadResponse = await this.storeOffChain(inputData);
 
       const client = global.universalRedisClient;
@@ -38,7 +39,7 @@ class LandTokenCreateService {
 
         await client.set(
           `land_token_cid_arr`,
-          JSON.stringify([...new Set(cidArray)])
+          JSON.stringify([...new Set(cidArray)]),
         );
 
         cidArray = await client.get(`land_token_cid_arr`);
@@ -51,7 +52,7 @@ class LandTokenCreateService {
   }
 
   public async storeOffChain(
-    inputData: LandTokenCreatePayload
+    inputData: LandTokenCreatePayload,
   ): Promise<LandTokenUploadResponse> {
     try {
       // Convert JSON payload to string
@@ -62,7 +63,10 @@ class LandTokenCreateService {
 
       const uploadResponse = await lighthouse.uploadText(jsonString, apiKey);
 
-	  eventEmitter.emit("logging", `Uploaded payload details: ${uploadResponse}`)
+      eventEmitter.emit(
+        "logging",
+        `Uploaded payload details: ${uploadResponse}`,
+      );
 
       const cid = uploadResponse.data.Hash;
 

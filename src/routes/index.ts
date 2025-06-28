@@ -1,1 +1,1 @@
-export * from "./LandToken"
+export * from "./LandToken";

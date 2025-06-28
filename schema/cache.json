@@ -1,6 +1,6 @@
 {
   "/v1/land-token": {
-    "hash": "1437b00968b6e90e20b55036fd558d6e5051a997",
+    "hash": "aad64b4e6eda6bffc70a47f8138ef417aa17416c",
     "schemas": {
       "/v1/land-token/create": {
         "type": "object",

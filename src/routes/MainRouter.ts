@@ -1,11 +1,9 @@
-import express from "express"
+import express from "express";
 
-import {
-	LandToken
-} from "."
+import { LandToken } from ".";
 
-const router = express.Router()
+const router = express.Router();
 
-router.use("/land-token", new LandToken().router)
+router.use("/land-token", new LandToken().router);
 
-export default router
+export default router;
